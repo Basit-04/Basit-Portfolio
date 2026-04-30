@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basit Ajaz — UI/UX Designer & Data Analyst</title>
+  <meta name="description" content="Portfolio of Basit Ajaz — UI/UX Designer & Data Analyst crafting premium digital experiences." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <link rel="icon" type="image/png" href="assets/logo.png" />
+  <link rel="stylesheet" href="Portfolio .css" />
+</head>
+<body class="theme-light">
+
+  <!-- ══════════════════════════════════════
+       NAVBAR
+  ══════════════════════════════════════ -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner container">
+      <a href="#home" class="nav-logo">
+        <img src="assets/logo.png" alt="Basit Ajaz logo" class="logo-image" />
+      </a>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">What I Do</a>
+        <a href="#portfolio" class="nav-link">Portfolio</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Dark/Light Toggle -->
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" aria-pressed="false">
+          <span class="toggle-track">
+            <span class="toggle-thumb">
+              <i class="fa-solid fa-sun sun-icon"></i>
+              <i class="fa-solid fa-moon moon-icon"></i>
+            </span>
+          </span>
+        </button>
+
+        <a href="#contact" class="btn btn-primary nav-cta">Contact Me</a>
+
+        <!-- Mobile hamburger -->
+        <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ══════════════════════════════════════
+       HERO
+  ══════════════════════════════════════ -->
+  <section class="hero" id="home">
+    <!-- Decorative shapes -->
+    <div class="hero-blob hero-blob--1"></div>
+    <div class="hero-blob hero-blob--2"></div>
+    <div class="hero-grid-lines"></div>
+
+    <div class="hero-inner container">
+      <!-- Left: text -->
+      <div class="hero-text" data-animate>
+        <span class="hero-badge">
+          <span class="badge-dot"></span>
+          Available for work
+        </span>
+        <h2 class="hero-name">Hello, I'm<br /><em>Basit Ajaz</em></h2>
+        <h2 class="hero-role">
+          <span class="role-text" id="roleText">UI/UX Designer</span>
+          <span class="role-cursor">|</span>
+          <span class="role-text" id="roleText">Data Analyst</span>
+          <span class="role-cursor">|</span>
+          <span class="role-text" id="roleText">Operations Specialist</span>
+        </h2>
+        <p class="hero-desc">
+          I craft premium digital experiences that sit at the intersection of
+          beautiful design and data-driven insight — turning complex problems
+          into elegant, intuitive solutions.
+        </p>
+
+        <div class="hero-actions">
+          <a href="assets/resume.pdf" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-lg">
+            <i class="fa-solid fa-download"></i> Download CV
+          </a>
+          <a href="#portfolio" class="btn btn-ghost btn-lg">View Work</a>
+        </div>
+
+        <div class="hero-social">
+          <a href="https://www.linkedin.com/in/basit-ajaz-abbasi-410570285/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://web.facebook.com/basit.ajazabbasi" target="_blank" class="social-link" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/basitajazabbasi" target="_blank" class="social-link" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/Basit-04" target="_blank" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+      </div>
+
+      <!-- Right: image -->
+      <div class="hero-image-wrap" data-animate data-delay="200">
+        <div class="hero-image-ring"></div>
+        <div class="hero-image-card">
+          <a href="https://ibb.co/kg0Y0WsF"><img src="https://i.ibb.co/Kj7C73pH/200e010d-f4c4-4c9a-b6e2-0af21ba79344.png" alt="200e010d f4c4 4c9a b6e2 0af21ba79344" border="0"></a>
+          <div class="avatar-initials">BA</div>
+        </div>
+        <!-- Floating badges -->
+        <div class="float-badge float-badge--figma">
+          <i class="fa-brands fa-figma"></i> Figma Expert
+        </div>
+        <div class="float-badge float-badge--data">
+          <i class="fa-solid fa-chart-pie"></i> Data Analyst
+        </div>
+        <div class="float-badge float-badge--Operations">
+          <i class="fa-solid fa-gear"></i> Operations
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       ABOUT
+  ══════════════════════════════════════ -->
+  <section class="about section" id="about">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">About Me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text" data-animate>
+          <p class="about-lead">
+            A multidisciplinary professional blending the art of intuitive interface design
+            with the science of data analytics to deliver solutions that are both beautiful
+            and measurably effective.
+          </p>
+          <p>
+            With a sharp eye for aesthetics and a rigorous analytical mindset, I bridge the
+            gap between design thinking and business intelligence. Whether crafting user
+            flows in Figma or building insight dashboards in Power BI, every output is
+            purpose-built, pixel-perfect, and performance-driven.
+          </p>
+          <div class="about-tags">
+            <span class="tag">Figma</span>
+            <span class="tag">Power BI</span>
+            <span class="tag">Adobe XD</span>
+            <span class="tag">SQL</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Tableau</span>
+          </div>
+        </div>
+
+        <!-- Stat cards -->
+        <div class="stats-grid" data-animate data-delay="150">
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+            <div class="stat-number" data-count="5">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">Years of Experience</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-folder-open"></i></div>
+            <div class="stat-number" data-count="60">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">Completed Projects</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-users"></i></div>
+            <div class="stat-number" data-count="30">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">Clients Served</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon"><i class="fa-solid fa-box-archive"></i></div>
+            <div class="stat-number" data-count="120">0</div>
+            <div class="stat-plus">+</div>
+            <div class="stat-label">Deliverables</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       WHAT I DO (SKILLS)
+  ══════════════════════════════════════ -->
+  <section class="skills section" id="skills">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Capabilities & Expertise</h2>
+      </div>
+
+      <div class="skills-grid">
+
+        <!-- Card 1 -->
+        <div class="skill-card" data-animate data-delay="0">
+          <div class="skill-card-glow"></div>
+          <div class="skill-icon-wrap">
+            <i class="fa-solid fa-pen-nib"></i>
+          </div>
+          <h3 class="skill-title">UI/UX Design</h3>
+          <p class="skill-desc">End-to-end product design — from wireframes & user research to high-fidelity prototypes that delight users.</p>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Figma</span><span>95%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="95"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Adobe XD</span><span>88%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Prototyping</span><span>92%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="skill-card" data-animate data-delay="80">
+          <div class="skill-card-glow"></div>
+          <div class="skill-icon-wrap">
+            <i class="fa-solid fa-chart-column"></i>
+          </div>
+          <h3 class="skill-title">Data & Analytics</h3>
+          <p class="skill-desc">Transforming raw data into compelling visual stories and actionable business intelligence dashboards.</p>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Power BI</span><span>90%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Excel / SQL</span><span>85%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Tableau</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="skill-card" data-animate data-delay="160">
+          <div class="skill-card-glow"></div>
+          <div class="skill-icon-wrap">
+            <i class="fa-solid fa-diagram-project"></i>
+          </div>
+          <h3 class="skill-title">Operations & Workflow</h3>
+          <p class="skill-desc">Streamlining business processes through smart automation, SOP design, and efficiency-first thinking.</p>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Process Design</span><span>88%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Automation</span><span>82%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Project Mgmt</span><span>90%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="skill-card" data-animate data-delay="240">
+          <div class="skill-card-glow"></div>
+          <div class="skill-icon-wrap">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <h3 class="skill-title">Design & Branding</h3>
+          <p class="skill-desc">Building cohesive visual identities — logos, brand systems, and marketing collateral with lasting impact.</p>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Brand Identity</span><span>87%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="87"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Illustrator</span><span>80%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Photoshop</span><span>83%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="83"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="skill-card skill-card--wide" data-animate data-delay="320">
+          <div class="skill-card-glow"></div>
+          <div class="skill-icon-wrap">
+            <i class="fa-solid fa-headset"></i>
+          </div>
+          <h3 class="skill-title">Technical IT Support</h3>
+          <p class="skill-desc">Providing robust technical support — hardware, software, networking, and end-user training with a human-first approach.</p>
+          <div class="skill-bars">
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Hardware / Software</span><span>90%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>Networking</span><span>78%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <div class="skill-bar-label"><span>IT Documentation</span><span>92%</span></div>
+              <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       PORTFOLIO
+  ══════════════════════════════════════ -->
+  <section class="portfolio section" id="portfolio">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Selected Work</h2>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="portfolio-filters" data-animate>
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ux">UI/UX</button>
+        <button class="filter-btn" data-filter="data">Data</button>
+        <button class="filter-btn" data-filter="brand">Branding</button>
+      </div>
+
+      <div class="portfolio-grid">
+
+        <div class="portfolio-card" data-category="ux" data-animate data-delay="0">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img portfolio-img--1"></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="overlay-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">FinTech Mobile App</h3>
+            <p class="portfolio-desc">Complete redesign of a digital banking platform focusing on accessibility and conversion.</p>
+            <div class="portfolio-tags">
+              <span class="ptag">Figma</span>
+              <span class="ptag">Prototyping</span>
+              <span class="ptag">User Research</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="data" data-animate data-delay="80">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img portfolio-img--2"></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="overlay-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">Sales Analytics Dashboard</h3>
+            <p class="portfolio-desc">End-to-end Power BI dashboard delivering real-time sales insights across 12 regions.</p>
+            <div class="portfolio-tags">
+              <span class="ptag">Power BI</span>
+              <span class="ptag">SQL</span>
+              <span class="ptag">DAX</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="brand" data-animate data-delay="160">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img portfolio-img--3"></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="overlay-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">Brand Identity System</h3>
+            <p class="portfolio-desc">Full visual identity for a SaaS startup — logo, typography, color system, and brand guidelines.</p>
+            <div class="portfolio-tags">
+              <span class="ptag">Illustrator</span>
+              <span class="ptag">Brand Design</span>
+              <span class="ptag">Guidelines</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="ux" data-animate data-delay="240">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img portfolio-img--4"></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="overlay-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">Healthcare Patient Portal</h3>
+            <p class="portfolio-desc">Accessible, WCAG-compliant patient dashboard designed for clarity and ease of use.</p>
+            <div class="portfolio-tags">
+              <span class="ptag">Adobe XD</span>
+              <span class="ptag">Accessibility</span>
+              <span class="ptag">UX Research</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="data" data-animate data-delay="320">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img portfolio-img--5"></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="overlay-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">HR Analytics Report</h3>
+            <p class="portfolio-desc">Automated monthly HR reporting suite tracking attrition, performance, and headcount.</p>
+            <div class="portfolio-tags">
+              <span class="ptag">Excel</span>
+              <span class="ptag">Power BI</span>
+              <span class="ptag">Automation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card" data-category="brand" data-animate data-delay="400">
+          <div class="portfolio-img-wrap">
+            <div class="portfolio-img portfolio-img--6"></div>
+            <div class="portfolio-overlay">
+              <a href="#" class="overlay-link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+            </div>
+          </div>
+          <div class="portfolio-info">
+            <h3 class="portfolio-title">E-Commerce UI Kit</h3>
+            <p class="portfolio-desc">100+ component UI kit for modern e-commerce, fully tokenized and developer-ready.</p>
+            <div class="portfolio-tags">
+              <span class="ptag">Figma</span>
+              <span class="ptag">Design System</span>
+              <span class="ptag">Components</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       EXPERIENCE (TIMELINE)
+  ══════════════════════════════════════ -->
+  <section class="experience section" id="experience">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Career Journey</h2>
+      </div>
+
+      <div class="timeline">
+
+        <div class="timeline-item timeline-item--left" data-animate>
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="timeline-role">Senior UI/UX Designer</h3>
+                <p class="timeline-company"><i class="fa-solid fa-building"></i> TechVision Studios</p>
+              </div>
+              <span class="timeline-date">2022 – Present</span>
+            </div>
+            <p class="timeline-desc">
+              Leading end-to-end product design for enterprise SaaS clients. Managed a team of 3 junior designers,
+              established the company's first design system, and reduced design-to-development handoff time by 40%.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Figma</span><span class="tag">Design Systems</span><span class="tag">Team Lead</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item--right" data-animate data-delay="100">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="timeline-role">Data Analyst</h3>
+                <p class="timeline-company"><i class="fa-solid fa-building"></i> DataSphere Analytics</p>
+              </div>
+              <span class="timeline-date">2020 – 2022</span>
+            </div>
+            <p class="timeline-desc">
+              Built and maintained 15+ Power BI dashboards for C-suite stakeholders. Automated monthly reporting
+              workflows, saving 20+ hours/month, and delivered data models improving forecast accuracy by 25%.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Power BI</span><span class="tag">SQL</span><span class="tag">Excel</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item--left" data-animate data-delay="200">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="timeline-role">UI/UX Designer & IT Support</h3>
+                <p class="timeline-company"><i class="fa-solid fa-building"></i> NovaByte Solutions</p>
+              </div>
+              <span class="timeline-date">2019 – 2020</span>
+            </div>
+            <p class="timeline-desc">
+              Dual role handling product interface redesigns alongside first-line IT support. Revamped the company
+              intranet UI and created documentation templates adopted company-wide.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Adobe XD</span><span class="tag">IT Support</span><span class="tag">Documentation</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item--right" data-animate data-delay="300">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <div class="timeline-card-header">
+              <div>
+                <h3 class="timeline-role">Graphic Designer (Freelance)</h3>
+                <p class="timeline-company"><i class="fa-solid fa-laptop"></i> Self-Employed</p>
+              </div>
+              <span class="timeline-date">2017 – 2019</span>
+            </div>
+            <p class="timeline-desc">
+              Worked with 20+ clients across branding, social media design, and print collateral.
+              Developed a strong foundation in visual identity design and client communication.
+            </p>
+            <div class="timeline-tags">
+              <span class="tag">Illustrator</span><span class="tag">Photoshop</span><span class="tag">Branding</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════ -->
+  <section class="contact section" id="contact">
+    <div class="container">
+      <div class="section-header" data-animate>
+        <h2 class="section-title">Let's Work Together</h2>
+      </div>
+
+      <div class="contact-grid">
+
+        <!-- Left: info -->
+        <div class="contact-info" data-animate>
+          <p class="contact-intro">
+            Have a project in mind or looking to collaborate? I'd love to hear from you.
+            Drop a message and I'll get back within 24 hours.
+          </p>
+
+          <div class="contact-items">
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <p class="contact-item-label">Email</p>
+                <p class="contact-item-value">
+                  <a href="mailto:basitajaz04@gmail.com">basitajaz04@gmail.com</a>
+                </p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-phone"></i></div>
+              <div>
+                <p class="contact-item-label">Phone</p>
+                <p class="contact-item-value">+92 316 1708027</p>
+              </div>
+            </div>
+            <div class="contact-item">
+              <div class="contact-item-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <p class="contact-item-label">Location</p>
+                <p class="contact-item-value">Islamabad, Pakistan</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="hero-social">
+          <a href="https://www.linkedin.com/in/basit-ajaz-abbasi-410570285/" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="https://web.facebook.com/basit.ajazabbasi" target="_blank" class="social-link" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/basitajazabbasi" target="_blank" class="social-link" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i></a>
+          <a href="https://github.com/Basit-04" target="_blank" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        </div>
+        </div>
+
+        <!-- Right: form -->
+        <div class="contact-form-wrap" data-animate data-delay="150">
+          <form class="contact-form" id="contactForm" novalidate>
+
+            <div class="form-row">
+              <div class="form-field">
+                <input type="text" id="name" name="name" placeholder=" " required />
+                <label for="name">Your Name</label>
+              </div>
+              <div class="form-field">
+                <input type="email" id="email" name="email"
+                 placeholder=" " required />
+                <label for="email">Email Address</label>
+              </div>
+            </div>
+
+            <div class="form-field">
+              <input type="text" id="subject" name="subject" placeholder=" " required />
+              <label for="subject">Subject</label>
+            </div>
+
+            <div class="form-field">
+              <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+              <label for="message">Your Message</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-full">
+              <span class="btn-text">Send Message</span>
+              <i class="fa-solid fa-paper-plane btn-icon"></i>
+            </button>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <a href="#home" class="nav-logo footer-logo">
+        <img src="assets/logo.png" alt="Basit Ajaz logo" class="logo-image" />
+      </a>
+      <p class="footer-copy">© 2025 Basit Ajaz. Crafted with care & precision.</p>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#portfolio">Work</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
