@@ -170,9 +170,9 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
    3. UTILITIES
 ──────────────────────────────────────────────────────── */
 .container {
-  max-width: 1120px;
+  max-width: 1200px;
   margin-inline: auto;
-  padding-inline: 20px;
+  padding-inline: 16px;
 }
 
 .section {
@@ -271,6 +271,7 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   border-radius: var(--r-full);
   font-size: 0.75rem;
   font-weight: 600;
+  transition: transform var(--t-base), box-shadow var(--t-base), border-color var(--t-base), background var(--t-base), color var(--t-base);
 }
 
 /* ── ANIMATE ON SCROLL ────────────────────────────────── */
@@ -741,47 +742,194 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 ──────────────────────────────────────────────────────── */
 .about {
   background: var(--bg-secondary);
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background-image:
+    radial-gradient(circle at 14% 22%, rgba(37, 99, 235, 0.08), transparent 18%),
+    radial-gradient(circle at 84% 78%, rgba(8, 145, 178, 0.08), transparent 20%),
+    radial-gradient(circle at 68% 24%, rgba(124, 58, 237, 0.05), transparent 16%);
+}
+
+.about .container {
+  position: relative;
+  z-index: 1;
+}
+
+.about .container::before,
+.about .container::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about .container::before {
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.14), rgba(124, 58, 237, 0.12)),
+    linear-gradient(135deg, rgba(8, 145, 178, 0.12), rgba(37, 99, 235, 0.05)),
+    linear-gradient(135deg, rgba(124, 58, 237, 0.1), rgba(8, 145, 178, 0.04));
+  background-size: 150px 150px, 110px 110px, 90px 90px;
+  background-position: 8% 26%, 86% 18%, 66% 82%;
+  background-repeat: no-repeat;
+  clip-path: none;
+  animation: aboutPolygonsDrift 22s ease-in-out infinite;
+  opacity: 0.72;
+}
+
+.about .container::after {
+  background:
+    linear-gradient(135deg, rgba(37, 99, 235, 0.1), rgba(8, 145, 178, 0.02)),
+    linear-gradient(135deg, rgba(124, 58, 237, 0.14), rgba(37, 99, 235, 0.06)),
+    linear-gradient(135deg, rgba(8, 145, 178, 0.1), rgba(124, 58, 237, 0.05));
+  background-size: 72px 72px, 128px 128px, 94px 94px;
+  background-position: 20% 78%, 92% 62%, 44% 10%;
+  background-repeat: no-repeat;
+  animation: aboutPolygonsDriftAlt 26s ease-in-out infinite;
+  opacity: 0.66;
+}
+
+.about::before,
+.about::after {
+  content: '';
+  position: absolute;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.about::before {
+  width: 240px;
+  height: 240px;
+  top: 10px;
+  left: -50px;
+  background:
+    linear-gradient(145deg, rgba(37, 99, 235, 0.2), rgba(124, 58, 237, 0.08));
+  clip-path: polygon(50% 0%, 88% 24%, 100% 68%, 72% 100%, 22% 92%, 0% 40%);
+  filter: blur(2px);
+  animation: aboutPolygonFloatLeft 18s ease-in-out infinite;
+}
+
+.about::after {
+  width: 280px;
+  height: 280px;
+  right: -60px;
+  bottom: 0;
+  background:
+    linear-gradient(145deg, rgba(8, 145, 178, 0.18), rgba(124, 58, 237, 0.1));
+  clip-path: polygon(26% 0%, 100% 18%, 84% 100%, 6% 82%, 0% 24%);
+  filter: blur(1px);
+  opacity: 0.3;
+  animation: aboutPolygonFloatRight 20s ease-in-out infinite;
 }
 
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(20px, 4vw, 36px);
+  grid-template-columns: minmax(0, 1.38fr) minmax(280px, 0.62fr);
+  gap: clamp(22px, 4vw, 44px);
   align-items: start;
+}
+
+.about-text {
+  padding: clamp(8px, 1.5vw, 14px) 0;
+  max-width: 760px;
 }
 
 .about-lead {
   font-family: var(--font-display);
-  font-size: 1.35rem;
-  line-height: 1.5;
+  font-size: clamp(1.45rem, 2.5vw, 1.95rem);
+  line-height: 1.45;
   color: var(--text-primary);
-  margin-bottom: var(--sp-3);
+  margin-bottom: 14px;
+  max-width: 26ch;
+  letter-spacing: -0.02em;
 }
 
 .about-text p:not(.about-lead) {
   color: var(--text-secondary);
-  line-height: 1.75;
-  margin-bottom: var(--sp-3);
+  line-height: 1.82;
+  margin-bottom: 18px;
+  max-width: 72ch;
 }
 
 .about-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  margin-top: var(--sp-4);
+}
+
+.about-tags .tag {
+  position: relative;
+  padding: 9px 16px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--bg-card) 92%, transparent);
+  border-color: color-mix(in srgb, var(--border) 78%, transparent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.about-tags .tag::before {
+  content: '';
+  position: absolute;
+  inset: auto 14px 0 14px;
+  height: 2px;
+  border-radius: var(--r-full);
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-base);
+}
+
+.about-tags .tag:hover {
+  transform: translateY(-4px);
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--accent-1) 32%, var(--border));
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.about-tags .tag:hover::before {
+  transform: scaleX(1);
+}
+
+@keyframes aboutPolygonsDrift {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  25% { transform: translate3d(18px, -14px, 0); }
+  50% { transform: translate3d(-14px, 12px, 0); }
+  75% { transform: translate3d(12px, 20px, 0); }
+}
+
+@keyframes aboutPolygonsDriftAlt {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  30% { transform: translate3d(-18px, 16px, 0); }
+  60% { transform: translate3d(16px, -18px, 0); }
+  80% { transform: translate3d(-8px, -6px, 0); }
+}
+
+@keyframes aboutPolygonFloatLeft {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate3d(26px, 22px, 0) rotate(12deg) scale(1.05); }
+}
+
+@keyframes aboutPolygonFloatRight {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg) scale(1); }
+  50% { transform: translate3d(-24px, -18px, 0) rotate(-10deg) scale(1.04); }
 }
 
 /* Stats grid */
 .stats-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--sp-3);
+  gap: 16px;
+  max-width: 360px;
+  justify-self: end;
 }
 
 .stat-card {
   background: var(--bg-card);
   border: 1px solid var(--border-card);
-  border-radius: var(--r-lg);
-  padding: var(--sp-4);
+  border-radius: 24px;
+  padding: 18px 22px 16px;
   text-align: center;
   box-shadow: var(--shadow-sm);
   transition: all var(--t-slow);
@@ -805,14 +953,14 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .stat-card:hover::after { opacity: 1; }
 
 .stat-icon {
-  width: 48px; height: 48px;
+  width: 46px; height: 46px;
   background: var(--label-bg);
   border-radius: var(--r-md);
   display: grid;
   place-items: center;
-  margin: 0 auto var(--sp-2);
+  margin: 0 auto 10px;
   color: var(--accent-1);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   transition: background var(--t-base), transform var(--t-spring);
 }
 .stat-card:hover .stat-icon {
@@ -823,24 +971,26 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .stat-number {
   font-family: var(--font-display);
-  font-size: 2.8rem;
+  font-size: 2.45rem;
+  font-weight: 700;
   line-height: 1;
   color: var(--accent-1);
   display: inline;
 }
 .stat-plus {
   font-family: var(--font-display);
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: var(--accent-2);
   display: inline;
 }
 .stat-label {
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   color: var(--text-muted);
   font-weight: 600;
-  margin-top: 8px;
+  margin-top: 7px;
   text-transform: uppercase;
-  letter-spacing: 0.06em;
+  letter-spacing: 0.07em;
+  line-height: 1.35;
 }
 
 /* ────────────────────────────────────────────────────────
@@ -1549,6 +1699,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     gap: 24px;
   }
 
+  .about-text {
+    padding: 24px;
+    max-width: none;
+  }
+
+  .about-lead,
+  .about-text p:not(.about-lead) {
+    max-width: none;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 24px;
@@ -1625,6 +1785,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
   /* About */
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid {
+    max-width: none;
+    justify-self: stretch;
+  }
+  .about-tags { gap: 10px; }
 
   /* Skills */
   .skills-grid {
