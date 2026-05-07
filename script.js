@@ -37,6 +37,7 @@
     initScrollAnimations();
     initSectionSpy();
     initPortfolioFilters();
+    initExperienceOrbit();
     initContactForm();
   }
 
@@ -349,6 +350,58 @@
         });
       });
     });
+  }
+
+  function initExperienceOrbit() {
+    const orbit = document.querySelector(".experience-orbit");
+    const value = document.querySelector(".experience-orbit-value");
+    const label = document.querySelector(".experience-orbit-label");
+    const list = document.querySelector(".experience-summary-list");
+    const rings = [...document.querySelectorAll(".experience-orbit-progress[data-skill][data-percentage]")];
+    const items = [...document.querySelectorAll(".experience-summary-item[data-skill][data-percentage]")];
+
+    if (!orbit || !value || !label || !list || !rings.length || !items.length) {
+      return;
+    }
+
+    const setActiveState = (skill, percentage) => {
+      orbit.classList.add("is-hovering");
+      list.classList.add("is-hovering");
+      value.textContent = percentage;
+      label.textContent = "";
+
+      rings.forEach((ring) => {
+        ring.classList.toggle("is-active", ring.dataset.skill === skill);
+      });
+
+      items.forEach((item) => {
+        item.classList.toggle("is-active", item.dataset.skill === skill);
+      });
+    };
+
+    const clearActiveState = () => {
+      orbit.classList.remove("is-hovering");
+      list.classList.remove("is-hovering");
+      value.textContent = "";
+      label.textContent = "";
+      rings.forEach((ring) => ring.classList.remove("is-active"));
+      items.forEach((item) => item.classList.remove("is-active"));
+    };
+
+    [...rings, ...items].forEach((element) => {
+      element.addEventListener("mouseenter", () => {
+        setActiveState(element.dataset.skill, element.dataset.percentage);
+      });
+
+      element.addEventListener("focus", () => {
+        setActiveState(element.dataset.skill, element.dataset.percentage);
+      });
+
+      element.addEventListener("mouseleave", clearActiveState);
+      element.addEventListener("blur", clearActiveState);
+    });
+
+    orbit.addEventListener("mouseleave", clearActiveState);
   }
 
   function initContactForm() {

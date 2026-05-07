@@ -605,8 +605,11 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   font-size: clamp(2.8rem, 5.5vw, 4.2rem);
   line-height: 1.02;
   color: var(--text-primary);
+  display: block;
+  width: fit-content;
+  max-width: 100%;
   margin-bottom: var(--sp-2);
-  padding-right: 0.08em;
+  padding-right: 0;
 }
 .hero-name em {
   font-style: normal;
@@ -1320,11 +1323,12 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .experience-layout {
-  max-width: 1100px;
+  max-width: 1080px;
   margin-inline: auto;
+  margin-top: clamp(8px, 1.5vw, 16px);
   display: grid;
-  gap: clamp(24px, 4vw, 40px);
-  padding: clamp(24px, 3.5vw, 38px);
+  gap: clamp(22px, 3.5vw, 34px);
+  padding: clamp(24px, 3vw, 34px);
   border-radius: 36px;
   background:
     linear-gradient(145deg, rgba(255,255,255,0.88), rgba(255,255,255,0.62)),
@@ -1336,8 +1340,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .experience-intro {
   max-width: 820px;
-  text-align: left;
-  margin-inline: 0;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .experience-overview {
@@ -1374,13 +1378,16 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 
 .experience-panel-title {
   font-family: var(--font-display);
-  font-size: clamp(1.2rem, 1.8vw, 1.6rem);
-  line-height: 1.24;
-  letter-spacing: -0.03em;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.62;
   color: var(--text-primary);
-  margin-bottom: 12px;
-  max-width: 50ch;
+  margin-top: 10px;
+  margin-bottom: 18px;
+  width: min(100%, 42rem);
+  max-width: 42rem;
   text-align: center;
+  margin-inline: auto;
 }
 
 .experience-panel-text {
@@ -1388,6 +1395,8 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   line-height: 1.72;
   color: var(--text-secondary);
   max-width: 62ch;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .experience-board {
@@ -1402,32 +1411,34 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
   position: relative;
   display: grid;
   gap: 18px;
-  padding-left: 30px;
+  padding-left: 0;
 }
 
 .experience-timeline::before {
   content: '';
   position: absolute;
-  left: 10px;
-  top: 12px;
-  bottom: 12px;
+  left: 13px;
+  top: 28px;
+  bottom: 28px;
   width: 2px;
   background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--accent-1) 34%, var(--border)), transparent);
 }
 
 .experience-entry {
   display: grid;
-  grid-template-columns: 24px minmax(0, 1fr);
-  gap: 14px;
-  align-items: start;
+  grid-template-columns: 28px minmax(0, 1fr);
+  gap: 16px;
+  align-items: center;
 }
 
 .experience-marker {
   position: relative;
   z-index: 1;
   display: flex;
+  align-items: center;
   justify-content: center;
-  padding-top: 18px;
+  align-self: stretch;
+  min-height: 100%;
 }
 
 .experience-marker-dot {
@@ -1528,9 +1539,37 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 }
 
 .experience-tags .tag {
+  position: relative;
   padding: 5px 11px;
   font-size: 0.68rem;
   font-weight: 700;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--bg-card) 92%, transparent);
+  border-color: color-mix(in srgb, var(--border) 78%, transparent);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.experience-tags .tag::before {
+  content: '';
+  position: absolute;
+  inset: auto 12px 0 12px;
+  height: 2px;
+  border-radius: var(--r-full);
+  background: var(--accent-gradient);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--t-base);
+}
+
+.experience-tags .tag:hover {
+  transform: translateY(-4px);
+  color: var(--text-primary);
+  border-color: color-mix(in srgb, var(--accent-1) 32%, var(--border));
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.1);
+}
+
+.experience-tags .tag:hover::before {
+  transform: scaleX(1);
 }
 
 .experience-summary {
@@ -1539,137 +1578,200 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     color-mix(in srgb, var(--bg-card) 96%, transparent);
   border: 1px solid color-mix(in srgb, var(--border-card) 70%, var(--border));
   border-radius: 28px;
-  padding: 22px 18px;
+  padding: 22px 18px 18px;
   box-shadow: var(--shadow-md);
   backdrop-filter: blur(16px);
+  display: grid;
+  justify-items: center;
+  align-content: start;
+  gap: 14px;
+  text-align: left;
 }
 
 .experience-orbit {
   position: relative;
-  width: min(100%, 240px);
-  aspect-ratio: 1;
-  margin: 0 auto 24px;
-  display: grid;
-  place-items: center;
-  --ring-track: rgba(148, 163, 184, 0.18);
+  width: 220px;
+  height: 220px;
+  margin-inline: auto;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  isolation: isolate;
 }
 
-.experience-orbit-ring {
-  position: absolute;
-  border-radius: 100%;
-  background:
-    conic-gradient(var(--ring-color) calc(var(--progress) * 1%), var(--ring-track) 0);
-  -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - var(--thickness)), #000 calc(100% - var(--thickness)));
-  mask: radial-gradient(farthest-side, transparent calc(100% - var(--thickness)), #000 calc(100% - var(--thickness)));
-  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+.experience-orbit-rings {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  transform: rotate(-90deg);
 }
 
-.experience-orbit-ring--1 {
-  inset: 0;
-  --progress: 92;
-  --thickness: 5px;
-  --ring-color: #2563eb;
+.experience-orbit-track,
+.experience-orbit-progress {
+  fill: none;
+  stroke-width: 5;
+  stroke-linecap: round;
+  vector-effect: non-scaling-stroke;
 }
 
-.experience-orbit-ring--2 {
-  inset: 14px;
-  --progress: 84;
-  --thickness: 16px;
-  --ring-color: #0f766e;
+.experience-orbit-track {
+  stroke: color-mix(in srgb, var(--border) 55%, transparent);
+  opacity: 0.75;
 }
 
-.experience-orbit-ring--3 {
-  inset: 28px;
-  --progress: 86;
-  --thickness: 14px;
-  --ring-color: #f59e0b;
+.experience-orbit-progress {
+  --circumference: 0;
+  --progress: 0;
+  stroke-dasharray: var(--circumference);
+  stroke-dashoffset: calc(var(--circumference) * (1 - var(--progress)));
+  cursor: pointer;
+  transition: opacity var(--t-base), filter var(--t-base), stroke-width var(--t-base);
 }
 
-.experience-orbit-ring--4 {
-  inset: 42px;
-  --progress: 90;
-  --thickness: 12px;
-  --ring-color: #7c3aed;
+.experience-orbit.is-hovering .experience-orbit-progress:not(.is-active) {
+  opacity: 0.5;
+  filter: saturate(0.82);
 }
 
-.experience-orbit-ring--5 {
-  inset: 56px;
-  --progress: 80;
-  --thickness: 10px;
-  --ring-color: #ec4899;
+.experience-orbit-progress.is-active {
+  opacity: 1;
+  stroke-width: 6.5;
+  filter: brightness(1.1) saturate(1.18);
+}
+
+.experience-orbit-progress--1 {
+  --circumference: 672.3;
+  --progress: 0.92;
+  stroke: #1abc9c;
+}
+
+.experience-orbit-progress--2 {
+  --circumference: 584.3;
+  --progress: 0.85;
+  stroke: #2ecc71;
+}
+
+.experience-orbit-progress--3 {
+  --circumference: 496.4;
+  --progress: 0.85;
+  stroke: #f1c40f;
+}
+
+.experience-orbit-progress--4 {
+  --circumference: 408.4;
+  --progress: 0.9;
+  stroke: #3498db;
+}
+
+.experience-orbit-progress--5 {
+  --circumference: 320.4;
+  --progress: 0.8;
+  stroke: #9b59b6;
 }
 
 .experience-orbit-core {
-  width: calc(100% - 88px);
-  aspect-ratio: 1;
-  border-radius: 50%;
-  display: grid;
-  place-items: center;
+  position: absolute;
+  z-index: 1;
+  inset: 50%;
+  width: 88px;
+  height: 88px;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  background:
-    linear-gradient(145deg, rgba(255,255,255,0.82), rgba(255,255,255,0.45)),
-    var(--bg-secondary);
-  border: 1px solid color-mix(in srgb, var(--border) 58%, transparent);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.45);
+  pointer-events: none;
 }
 
 .experience-orbit-core strong {
-  display: block;
-  font-family: var(--font-display);
-  font-size: 1.05rem;
-  line-height: 1.15;
-  color: var(--accent-1);
-  letter-spacing: -0.02em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 1em;
+  font-size: 1.35rem;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity var(--t-base), transform var(--t-base);
+}
+
+.experience-orbit.is-hovering .experience-orbit-core strong {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .experience-orbit-core span {
-  display: block;
-  margin-top: 6px;
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-secondary);
+  display: none;
 }
 
 .experience-summary-list {
   display: grid;
-  gap: 12px;
+  gap: 6px;
+  width: 100%;
+  max-width: 250px;
+  padding: 10px;
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.2), transparent),
+    color-mix(in srgb, var(--bg-glass) 78%, transparent);
+  border: 1px solid color-mix(in srgb, var(--border) 45%, transparent);
 }
 
-.experience-summary-list li {
+.experience-summary-item {
   display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 0.86rem;
-  line-height: 1.58;
+  align-items: center;
+  gap: 9px;
+  min-height: 38px;
+  font-size: 0.82rem;
+  line-height: 1.35;
   color: var(--text-secondary);
-  justify-content: space-between;
-  border-bottom: 1px dashed color-mix(in srgb, var(--border) 36%, transparent);
-  padding-bottom: 10px;
+  justify-content: flex-start;
+  border-radius: 14px;
+  padding: 8px 10px;
+  cursor: pointer;
+  transition: color var(--t-base), transform var(--t-base), background var(--t-base);
 }
 
-.experience-summary-list li strong {
+.experience-summary-item:hover,
+.experience-summary-item.is-active {
   color: var(--text-primary);
-  font-size: 0.82rem;
-  font-weight: 800;
-  margin-left: auto;
-  white-space: nowrap;
+  transform: translateX(3px);
+  background: color-mix(in srgb, var(--accent-4) 70%, transparent);
+}
+
+.experience-summary-list.is-hovering .experience-summary-item {
+  opacity: 0.45;
+}
+
+.experience-summary-list.is-hovering .experience-summary-item.is-active {
+  opacity: 1;
+  background: color-mix(in srgb, var(--accent-4) 88%, transparent);
+  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--border) 60%, transparent);
+}
+
+.experience-summary-text {
+  font-weight: 700;
+  letter-spacing: -0.01em;
 }
 
 .experience-summary-dot {
-  width: 10px;
-  height: 10px;
-  margin-top: 4px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
   flex: 0 0 auto;
+  box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 12%, transparent);
 }
 
-.experience-summary-dot--1 { background: #2563eb; }
-.experience-summary-dot--2 { background: #0f766e; }
-.experience-summary-dot--3 { background: #f59e0b; }
-.experience-summary-dot--4 { background: #7c3aed; }
-.experience-summary-dot--5 { background: #ec4899; }
+.experience-summary-dot--1 { background: #1abc9c; color: #1abc9c; }
+.experience-summary-dot--2 { background: #2ecc71; color: #2ecc71; }
+.experience-summary-dot--3 { background: #f1c40f; color: #f1c40f; }
+.experience-summary-dot--4 { background: #3498db; color: #3498db; }
+.experience-summary-dot--5 { background: #9b59b6; color: #9b59b6; }
 
 /* --------------------------------------------------------
    10. CONTACT SECTION
@@ -2098,7 +2200,10 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
     gap: 20px;
   }
   .experience-timeline {
-    padding-left: 24px;
+    padding-left: 0;
+  }
+  .experience-timeline::before {
+    left: 10px;
   }
   .experience-entry {
     grid-template-columns: 22px minmax(0, 1fr);
