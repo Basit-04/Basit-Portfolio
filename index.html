@@ -1,23 +1,65 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
  <!-- Personal Portfolio Website - Production Test -->
+```html
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
   <title>Basit Ajaz — UI/UX Designer & Data Analyst</title>
-  <meta name="description" content="Portfolio of Basit Ajaz — UI/UX Designer & Data Analyst crafting premium digital experiences." />
+
+  <meta
+    name="description"
+    content="Portfolio of Basit Ajaz — UI/UX Designer, Web Designer, Data Analyst, and IT professional."
+  />
+  <meta name="author" content="Basit Ajaz" />
+
+  <link rel="canonical" href="https://basit-pfolio.netlify.app/" />
+
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Basit Ajaz — UI/UX Designer & Data Analyst" />
+  <meta
+    property="og:description"
+    content="Portfolio of Basit Ajaz — UI/UX Designer, Web Designer, Data Analyst, and IT professional."
+  />
+  <meta property="og:url" content="https://basit-pfolio.netlify.app/" />
+  <meta
+    property="og:image"
+    content="https://basit-pfolio.netlify.app/assets/og-image.png"
+  />
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Basit Ajaz — UI/UX Designer & Data Analyst" />
+  <meta
+    name="twitter:description"
+    content="Portfolio of Basit Ajaz — UI/UX Designer, Web Designer, Data Analyst, and IT professional."
+  />
+  <meta
+    name="twitter:image"
+    content="https://basit-pfolio.netlify.app/assets/og-image.png"
+  />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Manrope:wght@500;600;700;800&family=Poppins:wght@500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
 
   <link rel="icon" type="image/png" href="assets/my logo.png" />
   <link rel="stylesheet" href="Portfolio .css" />
 </head>
+```
+
 <body class="theme-light">
 
   <!-- ══════════════════════════════════════
@@ -76,7 +118,7 @@
           <span class="badge-dot"></span>
           Available for work
         </span>
-        <h2 class="hero-name">Hello, I'm<br /><em>Basit Ajaz</em></h2>
+        <h2 class="hero-name">Hello, I'm<br /><em>Hadi Ajaz</em></h2>
         <h2 class="hero-role">
           <span class="role-text">UI/UX & Dev</span>
           <span class="role-cursor">|</span>
@@ -664,39 +706,79 @@
           <a href="https://github.com/Basit-04" target="_blank" class="social-link" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
         </div>
         </div>
+        ```html
+       <p class="netlify-honeypot">
+        <p class="hidden">
+         <form
+  class="contact-form"
+  id="contactForm"
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  novalidate
+>
+  <input type="hidden" name="form-name" value="contact" />
 
-        <!-- Right: form -->
-        <div class="contact-form-wrap" data-animate data-delay="150">
-          <form class="contact-form" id="contactForm" novalidate>
+  <p class="netlify-honeypot">
+    <label>
+      Don't fill this out if you're human:
+      <input name="bot-field" />
+    </label>
+  </p>
 
-            <div class="form-row">
-              <div class="form-field">
-                <input type="text" id="name" name="name" placeholder=" " required />
-                <label for="name">Your Name</label>
-              </div>
-              <div class="form-field">
-                <input type="email" id="email" name="email"
-                 placeholder=" " required />
-                <label for="email">Email Address</label>
-              </div>
-            </div>
+  <!-- Your existing form fields continue here -->
+<form
+  class="contact-form"
+  id="contactForm"
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  novalidate
+>
 
-            <div class="form-field">
-              <input type="text" id="subject" name="subject" placeholder=" " required />
-              <label for="subject">Subject</label>
-            </div>
+  <!-- Netlify spam protection -->
+  <input type="hidden" name="form-name" value="contact" />
 
-            <div class="form-field">
-              <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
-              <label for="message">Your Message</label>
-            </div>
+  <p class="hidden">
+    <label>
+      Don't fill this out if you're human:
+      <input name="bot-field" />
+    </label>
+  </p>
 
-            <button type="submit" class="btn btn-primary btn-full">
-              <span class="btn-text">Send Message</span>
-              <i class="fa-solid fa-paper-plane btn-icon"></i>
-            </button>
+  <div class="form-row">
+    <div class="form-field">
+      <input type="text" id="name" name="name" placeholder=" " required />
+      <label for="name">Your Name</label>
+    </div>
 
-          </form>
+    <div class="form-field">
+      <input type="email" id="email" name="email" placeholder=" " required />
+      <label for="email">Email Address</label>
+    </div>
+  </div>
+
+  <div class="form-field">
+    <input type="text" id="subject" name="subject" placeholder=" " required />
+    <label for="subject">Subject</label>
+  </div>
+
+  <div class="form-field">
+    <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
+    <label for="message">Your Message</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary btn-full">
+    <span class="btn-text">Send Message</span>
+    <i class="fa-solid fa-paper-plane btn-icon"></i>
+  </button>
+
+</form>
+```
+
+       
         </div>
 
       </div>

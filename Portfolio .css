@@ -1200,6 +1200,23 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .portfolio-card.hidden {
   display: none;
 }
+/* Netlify spam protection */
+.netlify-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+/* Netlify spam protection */
+.netlify-honeypot {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
 
 .portfolio-img-wrap {
   position: relative;
