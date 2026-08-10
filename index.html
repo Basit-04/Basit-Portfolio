@@ -665,6 +665,27 @@
         </div>
         </div>
         ```html
+       <p class="netlify-honeypot">
+        <p class="hidden">
+         <form
+  class="contact-form"
+  id="contactForm"
+  name="contact"
+  method="POST"
+  data-netlify="true"
+  netlify-honeypot="bot-field"
+  novalidate
+>
+  <input type="hidden" name="form-name" value="contact" />
+
+  <p class="netlify-honeypot">
+    <label>
+      Don't fill this out if you're human:
+      <input name="bot-field" />
+    </label>
+  </p>
+
+  <!-- Your existing form fields continue here -->
 <form
   class="contact-form"
   id="contactForm"
